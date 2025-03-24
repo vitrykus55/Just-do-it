@@ -1,0 +1,95 @@
+body {
+    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.full-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.typewriter {
+    display: inline-block;
+}
+
+.typewriter-text {
+    display: inline-block;
+    overflow: hidden;
+    letter-spacing: 2px;
+    animation: typing 1.5s steps(8, end), blink .90s step-end infinite;
+    white-space: nowrap;
+    font-size: 10rem;
+    font-weight: 400;
+    border-right: 4px solid #332a2a;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink {
+    from, to {
+        border-color: transparent
+    }
+    50% {
+        border-color: #332a2a;
+    }
+}
+.add-task input {
+    all: unset;
+}
+
+.add-task button {
+    all: unset;
+}
+
+.add-task input{
+    width: 75%;
+    border: 1px #332a2a solid;
+    border-radius: 20px 0 0 20px;
+    color: #d5c9c9;
+    background-color: #332a2a;
+    height: 3vh;
+    padding: 0 20px;
+}
+
+.add-task button{
+    border: 1px #332a2a solid;
+    border-radius:0 20px 20px 0;
+    height: 3vh;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+}
+
+.add-task button:hover{
+    background-color: rgba(255, 255, 255, 0.44);
+}
+
+.add-task{
+    display: flex;
+}
+
+#clock{
+    color: #332a2a;
+    display: flex;
+    justify-content: center;
+    height: 5vh;
+    align-items: center;
+}
