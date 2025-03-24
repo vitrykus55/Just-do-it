@@ -8,7 +8,7 @@ body {
     font-style: normal;
 }
 
-.full-page{
+.full-page {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,6 +50,7 @@ body {
         border-color: #332a2a;
     }
 }
+
 .add-task input {
     all: unset;
 }
@@ -58,7 +59,7 @@ body {
     all: unset;
 }
 
-.add-task input{
+.add-task input {
     width: 75%;
     border: 1px #332a2a solid;
     border-radius: 20px 0 0 20px;
@@ -68,9 +69,9 @@ body {
     padding: 0 20px;
 }
 
-.add-task button{
+.add-task button {
     border: 1px #332a2a solid;
-    border-radius:0 20px 20px 0;
+    border-radius: 0 20px 20px 0;
     height: 3vh;
     padding: 0 20px;
     cursor: pointer;
@@ -78,18 +79,46 @@ body {
 
 }
 
-.add-task button:hover{
+.add-task button:hover {
     background-color: rgba(255, 255, 255, 0.44);
 }
 
-.add-task{
+.add-task {
     display: flex;
 }
 
-#clock{
+#clock {
     color: #332a2a;
     display: flex;
     justify-content: center;
     height: 5vh;
     align-items: center;
+}
+
+.task-collection {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.task {
+    display: flex;
+    border: 3px #665c5c solid;
+    padding: 10px 20px;
+    width: 50%;
+    justify-content: space-between;
+    border-radius: 50px;
+    background-color: #332a2a;
+    color: #d5c9c9;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+
+.main-buttom img{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
 }
