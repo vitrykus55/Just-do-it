@@ -6,6 +6,7 @@ body {
     font-family: "DM Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+
 }
 
 .full-page {
@@ -13,11 +14,14 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+
 }
 
 
 .typewriter {
-    display: inline-block;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .typewriter-text {
@@ -85,6 +89,7 @@ body {
 
 .add-task {
     display: flex;
+    justify-content: center;
 }
 
 #clock {
@@ -100,14 +105,16 @@ body {
     gap: 5px;
     flex-wrap: wrap;
     justify-content: center;
-    max-width: 100%;
+    max-width: 600px;
+    height: auto;
+    padding: 0 50px;
 }
 
 .task {
     display: flex;
     border: 3px #665c5c solid;
     padding: 10px 20px;
-    width: 50%;
+    width: 60%;
     justify-content: space-between;
     border-radius: 50px;
     background-color: #332a2a;
@@ -116,7 +123,10 @@ body {
     align-items: center;
 
 }
-
+.completed span{
+    text-decoration: line-through;
+    opacity: 0.8;
+}
 .main-buttom img{
     width: 30px;
     height: 30px;
