@@ -1,5 +1,26 @@
+:root {
+    --base-color: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    --main-brown: #332a2a;
+    --dark-browm: #1e1919;
+    --white: #d5c9c9;
+    --plase-holder: #d5c9c9;
+    --buttons-color: rgba(255, 255, 255, 0.44);
+
+}
+
+/* dark theme */
+.dark-mode {
+    --base-color: linear-gradient(135deg, #000 0%, #212121 100%);
+    --main-brown: #fff;
+    --dark-browm: #fff;
+    --white: #d9cdcd;
+    --plase-holder: #000;
+    --buttons-color: rgba(255, 255, 255, 0.44);
+}
+
+
 body {
-    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    background-image: var(--base-color);
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -32,9 +53,10 @@ body {
     white-space: nowrap;
     font-size: 10rem;
     font-weight: 400;
-    border-right: 4px solid #332a2a;
+    border-right: 4px solid var(--main-brown);
     box-sizing: border-box;
     margin-bottom: 40px;
+    color: var(--dark-browm);
 }
 
 @keyframes typing {
@@ -51,7 +73,7 @@ body {
         border-color: transparent
     }
     50% {
-        border-color: #332a2a;
+        border-color: var(--main-brown);
     }
 }
 
@@ -65,26 +87,26 @@ body {
 
 .add-task input {
     width: 75%;
-    border: 1px #332a2a solid;
+    border: 1px var(--main-brown) solid;
     border-radius: 20px 0 0 20px;
-    color: #d5c9c9;
-    background-color: #332a2a;
+    color: var(--plase-holder);
+    background-color: var(--main-brown);
     height: 3vh;
     padding: 0 20px;
 }
 
 .add-task button {
-    border: 1px #332a2a solid;
+    border: 1px var(--main-brown) solid;
     border-radius: 0 20px 20px 0;
     height: 3vh;
     padding: 0 20px;
     cursor: pointer;
     transition: all 0.5s ease;
-
+    color: var(--dark-browm);
 }
 
 .add-task button:hover {
-    background-color: rgba(255, 255, 255, 0.44);
+    background-color: var(--buttons-color);
 }
 
 .add-task {
@@ -93,7 +115,7 @@ body {
 }
 
 #clock {
-    color: #332a2a;
+    color: var(--main-brown);
     display: flex;
     justify-content: center;
     height: 5vh;
@@ -112,28 +134,30 @@ body {
 
 .task {
     display: flex;
-    border: 3px #665c5c solid;
+    border: 3px var(--buttons-color) solid;
     padding: 10px 20px;
     width: 60%;
     justify-content: space-between;
     border-radius: 50px;
-    background-color: #332a2a;
-    color: #d5c9c9;
+    background-color: var(--main-brown);
+    color: var(--plase-holder);
     flex-wrap: wrap;
     align-items: center;
 
 }
-.completed span{
+
+.completed span {
     text-decoration: line-through;
     opacity: 0.8;
 }
-.main-buttom img{
+
+.main-buttom img {
     width: 30px;
     height: 30px;
     cursor: pointer;
 }
 
-.dark-theme-button{
+.dark-theme-button {
     position: fixed;
     display: flex;
     height: 15vh;
@@ -141,6 +165,7 @@ body {
     align-items: center;
     width: 90%;
 }
+
 .switch {
     position: relative;
     display: inline-block;
@@ -161,7 +186,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: var(--buttons-color);
     -webkit-transition: .4s;
     transition: .4s;
     border-radius: 30px;
@@ -181,11 +206,11 @@ body {
 }
 
 input:checked + .slider {
-    background-color:#332a2a;
+    background-color: var(--main-brown);
 }
 
 input:focus + .slider {
-    box-shadow: 0 0 1px #332a2a;
+    box-shadow: 0 0 1px var(--main-brown);
 }
 
 input:checked + .slider:before {
@@ -201,6 +226,42 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
-.dark-theme{
+.dark-theme {
     background-image: linear-gradient(to right, #434343 0%, black 100%);
+}
+
+/*.change-my-color {*/
+/*    filter: invert(100%) sepia(100%) saturate(100%) hue-rotate(87deg) brightness(119%) contrast(119%);*/
+/*}*/
+
+#theme-switch{
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-browm);
+    position: fixed;
+    top: 50px;
+    right: 50px;
+}
+
+#theme-switch svg:last-child{
+    display: none;
+}
+
+.dark-mode #theme-switch svg:first-child{
+    display: none;
+}
+
+.dark-mode #theme-switch svg:last-child{
+    display: block;
+    filter: invert(100%) sepia(100%) saturate(100%) hue-rotate(87deg) brightness(119%) contrast(119%);
+
+}
+
+.dark-mode .change-my-color {
+    filter: invert(100%) sepia(100%) saturate(100%) hue-rotate(87deg) brightness(119%) contrast(119%);
 }

@@ -20,8 +20,8 @@ function addTask() {
         <span>${dataTask}</span>
     </div>
     <div class="main-buttom">
-        <img src="svg/check.svg" alt="img" data-target="accept">
-        <img src="svg/trash.svg" alt="img" data-target="delete">
+        <img src="svg/check.svg" alt="img" data-target="accept" class="change-my-color">
+        <img src="svg/trash.svg" alt="img" data-target="delete" class="change-my-color">
     </div>
     `;
 

@@ -1,11 +1,20 @@
-function dark_theme() {
+let dark_mode = localStorage.getItem("dark_mode");
+const themeSwitch = document.getElementById("theme-switch");
 
-    const mainButton = document.getElementById("dark-theme-button");
-    const bodyElement = document.getElementById("body");
-
-
-    mainButton.addEventListener("click", function () {
-        body.classList.add("dark-theme");
-    })
+const enableDarkMode = () => {
+    document.body.classList.add("dark-mode");
+    localStorage.setItem("dark_mode", "active");
 }
-dark_theme();
+
+const disableDarkmode = () => {
+    document.body.classList.remove("dark-mode");
+    localStorage.setItem("dark_mode", null);
+}
+
+if(dark_mode === "active") enableDarkMode();
+
+themeSwitch.addEventListener('click', () => {
+    dark_mode = localStorage.getItem("dark_mode");
+    dark_mode !== 'active' ? enableDarkMode() : disableDarkmode()
+
+})
