@@ -25,9 +25,14 @@ function addTask() {
     </div>
     `;
 
-
     taskCollection.appendChild(newTask);
     document.getElementById("task").value = "";
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    if (!Array.isArray(tasks)) tasks = [];
+
+    tasks.push(newTask.textContent);
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+
 
 }
 
@@ -43,6 +48,7 @@ function wholeElement() {
         } else if (target === 'delete') {
             console.log("Deleted Task");
             event.target.closest(".task").remove();
+
         }
     });
 }
@@ -53,5 +59,27 @@ function startTask() {
     wholeElement();
 }
 
+function storageData() {
+    const taskCollection = document.getElementById('collection');
+    let tasks = localStorage.getItem("tasks");
+    let arrayTasks = JSON.parse(tasks) || [];
+    arrayTasks.forEach(task => {
+        const newTask = document.createElement("div");
+        newTask.classList.add("task");
+        newTask.innerHTML = `
+    <div class="text-to-do">
+        <span>${task}</span>
+    </div>
+    <div class="main-buttom">
+        <img src="svg/check.svg" alt="img" data-target="accept" class="change-my-color">
+        <img src="svg/trash.svg" alt="img" data-target="delete" class="change-my-color">
+    </div>
+    `;
+        taskCollection.appendChild(newTask);
+
+    })
+}
+
+storageData();
 
 startTask();
